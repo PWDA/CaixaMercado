@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -7,6 +8,8 @@
     </head>
     <body>
         <h1>Cadastro de produto!</h1>
+        <c:url value="/CadastroProduto"/>
+        
         <form action="CadastroProduto" method="post">
 
             <input type="number" name="id" placeholder="Digite o id do produto"><br>

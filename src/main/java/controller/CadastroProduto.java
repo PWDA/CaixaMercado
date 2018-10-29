@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,19 +30,11 @@ public class CadastroProduto extends HttpServlet {
             produto.setPrecoProduto(precoProduto);
             produto.setQuantidadeProduto(quantidadeProduto);
 
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>CadastroProduto</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Cadastrar produto</h1>");
-            out.println(id);
-            out.println(nomeProduto);
-            out.println(precoProduto);
-            out.println(quantidadeProduto);
-            out.println("</body>");
-            out.println("</html>");
+            RequestDispatcher rd = request.getRequestDispatcher("/ProdutoCadastrado.jsp");
+            request.setAttribute("produto", produto.getNomeProduto());
+            request.setAttribute("id", produto.getId());
+            rd.forward(request, response);
+          
         }
     }
 
