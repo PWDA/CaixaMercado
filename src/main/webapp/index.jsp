@@ -8,9 +8,9 @@
     </head>
     <body>
         <h1>Cadastro de produto!</h1>
-        <c:url value="/CadastroProduto"/>
         
-        <form action="CadastroProduto" method="post">
+        
+        <form action=<c:url value="/CadastroProduto"/> method="post">
 
             <input type="number" name="id" placeholder="Digite o id do produto"><br>
             <input type="text" name="nome-produto" placeholder="Digite o nome do produto"><br>
