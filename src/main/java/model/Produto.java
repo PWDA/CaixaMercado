@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Produto {
@@ -9,6 +10,7 @@ public class Produto {
     private String precoProduto;
     private String quantidadeProduto;
     private Date data = new Date();
+    private ArrayList<Produto> lista = new ArrayList();
 
     public Produto(int id, String nomeProduto, String precoProduto, String quantidadeProduto) {
         this.id = id;
@@ -57,6 +59,10 @@ public class Produto {
         this.quantidadeProduto = quantidadeProduto;
     }
     
-    
+    public ArrayList<Produto> cadastrarProduto(Produto produto){
+        lista.add(produto);
+        
+        return lista;
+    }
 
 }
