@@ -29,8 +29,10 @@ public class CadastroProduto extends HttpServlet {
             produto.setNomeProduto(nomeProduto);
             produto.setPrecoProduto(precoProduto);
             produto.setQuantidadeProduto(quantidadeProduto);
+            
 
             RequestDispatcher rd = request.getRequestDispatcher("/ProdutoCadastrado.jsp");
+            request.setAttribute("data", produto.getData());
             request.setAttribute("produto", produto.getNomeProduto());
             request.setAttribute("id", produto.getId());
             rd.forward(request, response);
