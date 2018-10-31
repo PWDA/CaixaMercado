@@ -18,14 +18,14 @@ public class CadastroProduto extends HttpServlet {
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
             System.out.println("Preparando");
-            int id = Integer.parseInt(request.getParameter("id"));
+            int cod = Integer.parseInt(request.getParameter("cod"));
             String quantidadeProduto = request.getParameter("quantidade-produto");
             String nomeProduto = request.getParameter("nome-produto");
             String precoProduto = request.getParameter("preco-produto");
 
-            Produto produto = new Produto(id, nomeProduto, precoProduto, quantidadeProduto);
+            Produto produto = new Produto(cod, nomeProduto, precoProduto, quantidadeProduto);
 
-            produto.setId(id);
+            produto.setCod(cod);
             produto.setNomeProduto(nomeProduto);
             produto.setPrecoProduto(precoProduto);
             produto.setQuantidadeProduto(quantidadeProduto);
@@ -34,7 +34,7 @@ public class CadastroProduto extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("/ProdutoCadastrado.jsp");
             request.setAttribute("data", produto.getData());
             request.setAttribute("produto", produto.getNomeProduto());
-            request.setAttribute("id", produto.getId());
+            request.setAttribute("cod", produto.getCod());
             rd.forward(request, response);
           
         }
