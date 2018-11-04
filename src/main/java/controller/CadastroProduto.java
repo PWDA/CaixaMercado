@@ -19,24 +19,23 @@ public class CadastroProduto extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             System.out.println("Preparando");
             int cod = Integer.parseInt(request.getParameter("cod"));
-            String quantidadeProduto = request.getParameter("quantidade-produto");
+            int quantidadeProduto = Integer.parseInt(request.getParameter("quantidade-produto"));
             String nomeProduto = request.getParameter("nome-produto");
-            String precoProduto = request.getParameter("preco-produto");
+            double precoProduto = Double.parseDouble(request.getParameter("preco-produto"));
 
-            Produto produto = new Produto(cod, nomeProduto, precoProduto, quantidadeProduto);
+            Produto produto = new Produto();
 
             produto.setCod(cod);
             produto.setNomeProduto(nomeProduto);
             produto.setPrecoProduto(precoProduto);
             produto.setQuantidadeProduto(quantidadeProduto);
-            
 
             RequestDispatcher rd = request.getRequestDispatcher("/ProdutoCadastrado.jsp");
             request.setAttribute("data", produto.getData());
             request.setAttribute("produto", produto.getNomeProduto());
             request.setAttribute("cod", produto.getCod());
             rd.forward(request, response);
-          
+
         }
     }
 

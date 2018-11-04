@@ -4,18 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Produto {
-    
+
     private int cod;
     private String nomeProduto;
-
-    public Produto(int cod, String nomeProduto, String precoProduto, String quantidadeProduto) {
-        this.cod = cod;
-        this.nomeProduto = nomeProduto;
-        this.precoProduto = precoProduto;
-        this.quantidadeProduto = quantidadeProduto;
-    }
-    private String precoProduto;
-    private String quantidadeProduto;
+    private double precoProduto;
+    private int quantidadeProduto;
     private Date data = new Date();
     private ArrayList<Produto> lista = new ArrayList();
 
@@ -35,19 +28,19 @@ public class Produto {
         this.cod = cod;
     }
 
-    public String getPrecoProduto() {
+    public double getPrecoProduto() {
         return precoProduto;
     }
 
-    public void setPrecoProduto(String precoProduto) {
+    public void setPrecoProduto(Double precoProduto) {
         this.precoProduto = precoProduto;
     }
 
-    public String getQuantidadeProduto() {
+    public int getQuantidadeProduto() {
         return quantidadeProduto;
     }
 
-    public void setQuantidadeProduto(String quantidadeProduto) {
+    public void setQuantidadeProduto(int quantidadeProduto) {
         this.quantidadeProduto = quantidadeProduto;
     }
 
@@ -66,7 +59,5 @@ public class Produto {
     public void setLista(ArrayList<Produto> lista) {
         this.lista = lista;
     }
-
-    
 
 }
