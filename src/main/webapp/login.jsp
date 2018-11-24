@@ -4,9 +4,9 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>Login PWDA</title>
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="stylesheet" href="../css/style.css">
+        <title>WDA - MARKET</title>
+        <link rel="stylesheet" href="./css/login.css">
+        <link rel="stylesheet" href="../css/login.css">
 
         <!--google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
@@ -21,7 +21,7 @@
             <div class="container">
                 <nav>
                     <div class="logo"><br>
-                        <a href="index.html"><img src="./img/pwda-logo.png" alt="" width="200"></a>   
+                      <img src="./img/pwda-logo.png" alt="" width="200"></a>   
                     </div><!--logo-->
                 </nav>
             </div><!--container--> 
@@ -29,7 +29,7 @@
         <section class="section-login">
 
             <div class="login">
-                <h2 class="text-logar">Login</h2>                  
+                <h2 class="text-logar">Login WDA - Market</h2>                  
 
                 <form method="post" action="${pageContext.request.contextPath}/Login">
                     <input type="text" name="login" id="user" placeholder="usuário">
