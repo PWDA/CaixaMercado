@@ -1,4 +1,4 @@
-package model;
+package br.com.senac.poo.model;
 public class FormaPagamento {
     
     private int codVenda;

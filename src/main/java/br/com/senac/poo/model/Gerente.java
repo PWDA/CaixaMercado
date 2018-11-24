@@ -1,4 +1,4 @@
-package model;
+package br.com.senac.poo.model;
 
 import java.util.Date;
 

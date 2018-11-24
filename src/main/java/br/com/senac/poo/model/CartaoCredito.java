@@ -1,4 +1,4 @@
-package model;
+package br.com.senac.poo.model;
 public class CartaoCredito extends FormaPagamento{
     
     private double taxaJuros;
