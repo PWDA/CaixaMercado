@@ -27,6 +27,7 @@
    </div><!--asido-info-->     
     <div class="logo-system">
         <img class="logo" src="../img/pwda-logo.png" alt="" width="400px">
+        <img class="logo" src="./img/pwda-logo.png" alt="" width="400px">
     </div><!--logo-system-->
     <div class="icons-func">
        <div style="display: flex; justify-content: center" class="container-icon">
@@ -54,7 +55,7 @@
              <a class="link-icon"  href="">
             <div class="icons">
                 <i class="fas fa-sign-out-alt"></i>
-                <p>SAIR</p>
+                <p><a href="${pageContext.request.contextPath}/logout">SAIR</a></p>
             </div><!--icons-->
             </a>
 
