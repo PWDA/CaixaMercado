@@ -1,10 +1,13 @@
 package br.com.senac.poo.model;
+
+import br.com.senac.poo.model.FormaPagamento;
+
 public class CartaoDebito extends FormaPagamento{
     
     private double taxaJuros;
     
-    public CartaoDebito(int codVenda, double valor, double taxaJuros) {
-        super(codVenda, valor);
+    public CartaoDebito(double valor, double taxaJuros) {
+        super(valor);
     }
 
     public double getTaxaJuros() {

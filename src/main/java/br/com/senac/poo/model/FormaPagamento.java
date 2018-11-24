@@ -1,30 +1,20 @@
 package br.com.senac.poo.model;
 public class FormaPagamento {
+        
+    private double valorTotal;
     
-    private int codVenda;
-    private double valor;
-    
-     public FormaPagamento(int codVenda, double valor) {
-        this.codVenda = codVenda;
-        this.valor = valor;
-    }
-     
-    public int getCodVenda() {
-        return codVenda;
+     public FormaPagamento(double valorTotal) {        
+        this.valorTotal = valorTotal;
     }
 
-    public void setCodVenda(int codVenda) {
-        this.codVenda = codVenda;
+    public double getValorTotal() {
+        return valorTotal;
     }
 
-    public double getValor() {
-        return valor;
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-    
     public void pagar(){
         
     }
