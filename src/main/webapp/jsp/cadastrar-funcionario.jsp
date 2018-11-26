@@ -33,7 +33,7 @@
                     <c:if test="${funcionario.getId() == 0}">
                         <h2 class="titulo-cad-func">Cadastro de Funcionário</h2>
                     </c:if> 
-                    <c:if test="${funcionario == null}">
+                    <c:if test="${funcionario.getId() == null}">
                         <h2 class="titulo-cad-func">Cadastro de Funcionário</h2>
                     </c:if> 
                     <form action="${pageContext.request.contextPath}/FuncCadastrar" method="post">  
@@ -93,7 +93,6 @@
                             <input type="text" name="cargo" id="cargo" placeholder="Digite o cargo" value="${funcionario.getCargo()}" required><br><br><br>
                             <input type="submit" name="cadastrar" value="Cadastrar">
                         </div><!--inputs-->
-
                     </form>
                 </div><!--cadastro-->
             </div><!--container-->

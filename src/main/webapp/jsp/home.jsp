@@ -37,22 +37,21 @@
                         <p>CAIXA</p>
                     </div><!--icons-->
                 </a>
-                <c:if test="${usuario.getAutorizar == 2}">
+                <c:if test="${usuario.getAutorizar() == 2}">
                 <a class="link-icon"  href="${pageContext.request.contextPath}/Relatorio">
                     <div class="icons">
                         <i class="fas fa-file-alt"></i>
                         <p>RELATÓRIO</p>
                     </div><!--icons-->
-                </a>           
+                </a>          
 
-                <a class="link-icon"  href="${pageContext.request.contextPath}/FuncConsultar"><!--ATENÇÃO-->
+                <a class="link-icon"  href="${pageContext.request.contextPath}/FuncConsultar">
                     <div class="icons">
                         <i class="fas fa-id-badge"></i>
                         <p>FUNCIONÁRIO</p>
                     </div><!--icons-->
                 </a>
                 </c:if>
-
                 <a class="link-icon"  href="${pageContext.request.contextPath}/logout">
                     <div class="icons">
                         <i class="fas fa-sign-out-alt"></i>
