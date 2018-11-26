@@ -21,10 +21,14 @@
             </div><!--status-->
             <div class="aside status">
                 status do caixa
-                <p class="status-caixa"><i class="fas fa-circle"></i></p>
+                <p class="status-caixa"><i class="fas fa-circle"></i>Aberto</p>
             </div><!--status-->
+            <div class="aside date">
+                data
+                <p class="status-caixa">00/00/0000</p>
+            </div><!--date-->
 
-        </div><!--asido-info-->     
+        </div><!--asido-info-->
         <div class="logo-system">
             <img class="logo" src="./img/pwda-logo.png" alt="" width="400px">
             <img class="logo" src="../img/pwda-logo.png" alt="" width="400px">
@@ -38,19 +42,19 @@
                     </div><!--icons-->
                 </a>
                 <c:if test="${usuario.getAutorizar() == 2}">
-                <a class="link-icon"  href="${pageContext.request.contextPath}/Relatorio">
-                    <div class="icons">
-                        <i class="fas fa-file-alt"></i>
-                        <p>RELATÓRIO</p>
-                    </div><!--icons-->
-                </a>          
+                    <a class="link-icon"  href="${pageContext.request.contextPath}/Relatorio">
+                        <div class="icons">
+                            <i class="fas fa-file-alt"></i>
+                            <p>RELATÓRIO</p>
+                        </div><!--icons-->
+                    </a>
 
-                <a class="link-icon"  href="${pageContext.request.contextPath}/FuncConsultar">
-                    <div class="icons">
-                        <i class="fas fa-id-badge"></i>
-                        <p>FUNCIONÁRIO</p>
-                    </div><!--icons-->
-                </a>
+                    <a class="link-icon"  href="${pageContext.request.contextPath}/FuncConsultar">
+                        <div class="icons">
+                            <i class="fas fa-id-badge"></i>
+                            <p>FUNCIONÁRIO</p>
+                        </div><!--icons-->
+                    </a>
                 </c:if>
                 <a class="link-icon"  href="${pageContext.request.contextPath}/logout">
                     <div class="icons">
@@ -63,6 +67,6 @@
 
         </div><!--icons-func-->
         <script src="./js/icons-home.js"></script>
-        <script src="../js/icons-home.js"></script>  
+        <script src="../js/icons-home.js"></script>
     </body>
 </html>
