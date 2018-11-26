@@ -9,10 +9,10 @@ public class Funcionario extends Pessoa{
     private Integer idLogin;
 
     public Funcionario(Integer registro, String cargo, Integer idLogin, Integer id, String nome, 
-            int documento, int telefone, Date dataNascimento, String endereco, 
-            String bairro, String cidade, String estado, int cep, String email, String sexo) {
+            String documento, String telefone, Date dataNascimento, String endereco, 
+            String bairro, String cidade, String estado, String cep, String email, String sexo, String situacao, int inativo) {
         super(id, nome, documento, telefone, dataNascimento, endereco, bairro, 
-                cidade, estado, cep, email, sexo);
+                cidade, estado, cep, email, sexo, situacao, inativo);
         this.registro = registro;
         this.cargo = cargo;
         this.idLogin = idLogin;

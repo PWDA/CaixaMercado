@@ -35,7 +35,7 @@
                     <input type="text" name="login" id="user" placeholder="usuário">
                     <input type="password" name="senha" id="pass" placeholder="senha"><br><br>   
                     <c:out value="${msgErro}"/>
-                    <input class="btn-login" type="submit" name="btn-logar" value="Entrar">  
+                    <input class="btn-login" type="submit" name="btn-logar" value="Abrir Caixa">  
                 </form>
             </div><!--login--> 
 

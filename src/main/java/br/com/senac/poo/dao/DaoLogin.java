@@ -26,7 +26,7 @@ public class DaoLogin {
             pst.setString(2, login.getSenha());
             pst.setInt(3, login.getFunc());
             pst.setString(4, login.getPermissao());
-            pst.setInt(6, login.getId());
+            pst.setInt(5, login.getId());
             
             pst.execute();
         } finally {

@@ -6,20 +6,22 @@ public abstract class Pessoa {
     
     private Integer id;
     private String nome;
-    private int documento;
-    private int telefone;
+    private String documento;
+    private String telefone;
     private Date dataNascimento;    
     private String endereco;
     private String bairro;
     private String cidade;
     private String estado;
-    private int cep;
+    private String cep;
     private String email;
     private String sexo;
+    private String situacao;
+    private int inativo;
 
-    public Pessoa(Integer id, String nome, int documento, int telefone, 
+    public Pessoa(Integer id, String nome, String documento, String telefone, 
             Date dataNascimento, String endereco, String bairro, String cidade, 
-            String estado, int cep, String email, String sexo) {
+            String estado, String cep, String email, String sexo,String situacao, int inativo) {
         this.id = id;
         this.nome = nome;
         this.documento = documento;
@@ -32,6 +34,8 @@ public abstract class Pessoa {
         this.cep = cep;
         this.email = email;
         this.sexo = sexo;
+        this.situacao = situacao;
+        this.inativo = inativo;
     }
 
     public Pessoa() {
@@ -53,19 +57,19 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public int getDocumento() {
+    public String getDocumento() {
         return documento;
     }
 
-    public void setDocumento(int documento) {
+    public void setDocumento(String documento) {
         this.documento = documento;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -109,11 +113,11 @@ public abstract class Pessoa {
         this.estado = estado;
     }
 
-    public int getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(int cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 
@@ -132,5 +136,21 @@ public abstract class Pessoa {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }           
+
+    public String getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
+    }
+
+    public int getInativo() {
+        return inativo;
+    }
+
+    public void setInativo(int inativo) {
+        this.inativo = inativo;
+    }
    
 }

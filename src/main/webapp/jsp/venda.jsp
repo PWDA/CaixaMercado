@@ -7,7 +7,6 @@
     <title>WDA - MARKET</title>
     <link rel="stylesheet" href="./css/venda.css">
     <link rel="stylesheet" href="../css/venda.css">
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     
     <link href="https://fonts.googleapis.com/css?family=Archivo:400,500,700" rel="stylesheet">
@@ -35,7 +34,8 @@
           <input style="width: 100px" type="text" name="valor-unitario">
         </form>
         <div class="icon-exit">
-            <img src="img/icon-exit.png" alt="" width="50px"></a>
+            <a href="./jsp/home.jsp"><img src="./img/icon-exit.png" alt="" width="50px"></a>
+            <a href="../jsp/home.jsp"><img src="../img/icon-exit.png" alt="" width="50px"></a>
           </div><!--icon-exit-->
       </div>
      
@@ -143,7 +143,7 @@
                <option value="cartao-debito">Cartão de débito</option>
                <option value="cartao-credito">Cartão de crédito</option>
            </select>
-               <input type="submit" name="btnFecharCompra" value="Finalizar compra">
+               <input type="submit" name="btnFecharCompra" value="Fechar compra">
                <a class="voltar" href="index.html">voltar</a>
        </form>
       </div><!--formulario-input-->
@@ -151,6 +151,7 @@
    </section><!--lista-compra-->
    
    
-    <script src="js/icons-home.js"></script>  
+    <script src="./js/icons-home.js"></script>  
+    <script src="../js/icons-home.js"></script>  
 </body>
 </html>

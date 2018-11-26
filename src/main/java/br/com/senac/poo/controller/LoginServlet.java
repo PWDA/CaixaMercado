@@ -25,9 +25,7 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("msgErro", "Você saiu do sistema");
         }
 
-        RequestDispatcher dispatcher
-                = request.getRequestDispatcher(
-                        "./login.jsp");
+        RequestDispatcher dispatcher= request.getRequestDispatcher("./login.jsp");
         dispatcher.forward(request, response);
     }
 
