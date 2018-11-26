@@ -2,6 +2,7 @@ package br.com.senac.poo.controller;
 
 import br.com.senac.poo.dao.DaoRelatorio;
 import br.com.senac.poo.model.Relatorio;
+import com.sun.javafx.binding.StringFormatter;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -26,7 +27,7 @@ public class RelatorioServlet extends HttpServlet {
         try {
             if (pagina.endsWith("Relatorio")) {
                 relatorioDia(request, response);
-           } 
+            }
 //            else if (pagina.endsWith("Relatorio-Mes")) {
 //                relatorioMes(request, response);
 //            }
@@ -42,9 +43,9 @@ public class RelatorioServlet extends HttpServlet {
         String pagina = request.getRequestURI();
 
         try {
-            if (pagina.endsWith("Relatorio-Dia")) {
+            if (pagina.endsWith("Relatorio")) {
                 relatorioDia(request, response);
-            } 
+            }
 //            else if (pagina.endsWith("Relatorio-Mes")) {
 //                relatorioMes(request, response);
 //            }
@@ -55,23 +56,19 @@ public class RelatorioServlet extends HttpServlet {
 
     protected void relatorioDia(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, Exception {
         DateFormat nova = new SimpleDateFormat("yyyy-MM-dd");
-        String inicio =request.getParameter("dt_inicial");
-        String fim = request.getParameter("dt_final");
-        String busca = request.getParameter("buscar");
+        String inicio   = request.getParameter("dt_inicial");
+        String fim      = request.getParameter("dt_final");
+        String busca    = request.getParameter("buscar");
         Date date = new Date();
-        
+
         if (inicio == null) {
             inicio = nova.format(date);
-        }else{
-            inicio = nova.format(inicio);
         }
-        
+
         if (fim == null) {
             fim = nova.format(date);
-        }else{
-            fim = nova.format(fim);
         }
-        
+
         if (busca == null) {
             busca = "";
         }

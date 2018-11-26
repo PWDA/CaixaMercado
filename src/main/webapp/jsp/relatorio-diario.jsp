@@ -28,11 +28,13 @@
         <section>
             <div class="container">
                 <div class="form-relatorio-regional">
-                    <h1>Relatório diário</h1>
-                    Data inicial<input type="date" name="dt_inicial" id="dt_inicial"><br>
-                    Data final<input type="date" name="dt_final" id="dt_final"><br>
-                    Caixa <input type="text" name="caixa" id="caixa" placeholder="Buscar por Caixa" value="${buscar}">
-                    <a href="${pageContext.request.contextPath}/Relatorio"><input type="submit" name="btnGerar" value="Consultar"></a>
+                    <form action="${pageContext.request.contextPath}/Relatorio" method="post">
+                        <h1>Relatório diário</h1>
+                        Data inicial<input type="date" name="dt_inicial" id="dt_inicial" value="${dt_inicial}"><br>
+                        Data final<input type="date" name="dt_final" id="dt_final" value="${dt_final}"><br>
+                        Caixa <input type="text" name="caixa" id="caixa" placeholder="Buscar por Caixa" value="${buscar}">
+                        <input type="submit" name="btnGerar" value="Consultar">
+                    </form>
                 </div><!--form-relatorio-regional-->
             </div><!--container-->
         </section>

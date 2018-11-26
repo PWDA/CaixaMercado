@@ -20,7 +20,6 @@ public class LogoutServlet extends HttpServlet {
 
         sessao.invalidate();
         Comuns.setUsuarioLogado(null);
-        String a = "a";
 
         response.sendRedirect(request.getContextPath() + "/Login?code=99");
     }
