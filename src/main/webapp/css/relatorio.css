@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Niramit', sans-serif;
+
+}
+
+body{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#42f4a1), to(#fafafa));
+    background-image: linear-gradient(to bottom, #42f4a1, #fafafa);
+}
+
+header{
+    background: #444;
+    padding: 5px 0;
+}
+
+header span{
+    position: relative;
+    background: #444;
+    top: 10px;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+    color: white
+}
+
+.top-header{
+    background: #ffffff;
+}
+
+.img-logo{
+    padding: 10px 0
+}
+
+nav{
+    background: #67C18D;
+}
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.menu-principal{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px 0;
+
+}
+
+.link-submenu-cadastro:hover .sub-menu,
+.link-submenu-consulta:hover .sub-menu{
+    display: block;
+}
+
+.sub-menu{
+    position: absolute;
+    display: none;
+    padding-top: 10px;
+}
+
+.sub-menu li{
+    list-style: none;
+}
+
+.sub-menu a{
+    width: 100%;
+    display: block;
+
+}
+
+.menu-principal > li{
+    list-style: none;
+    margin: 0 10px;
+    padding: 10px 0;
+}
+
+
+
+.sub-menu-item a{
+    background:#67C18D!important;
+    color: white!important;
+
+
+}
+
+
+.menu-principal > li a{
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+}
+
+.btn-login{
+    font-size: 14px;
+    text-decoration: none;
+    background:#0066B0;
+    border-radius: 10px 21px 2px;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.btn-login:hover{
+    background-image: -webkit-gradient(linear, left top, right bottom, from(#00BDF4),color-stop(#0066B0), to(#0066B0));
+    background-image: linear-gradient(to bottom right, #00BDF4,#0066B0, #0066B0);
+    -webkit-box-shadow: 2px 5px 10px rgba(0,0,0,.2);
+    box-shadow: 2px 5px 10px rgba(0,0,0,.2);
+}
+
+.date-form{
+    display: flex;
+    align-items: center;
+}
+
+.date-form input{
+
+}
+
+.form-relatorio-regional h1{
+    padding-top: 40px;
+    text-align: center;
+
+}
+
+.icon-exit{
+    position: absolute;
+    top: 70px;
+    left: 90%;
+    cursor: pointer;
+}
+
+input{
+    border: 0;
+    background: #e1e1e1;
+    margin: 15px 10px;
+}
+
+input[name=btnConsultar],
+input[name=btnGerar]{
+    float: right;
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+}
+
+input[name=btnGerar]{
+    margin: 20px;
+}
+
+.tabela-consultar{
+    background: white;
+    height: 60vh;
+    overflow: auto;
+}
+
+.table-consultar{
+    width: 100%;
+
+}
+
+table{
+    border-collapse: collapse;
+
+}
+
+td{
+    height: 70px;
+    text-align: center;
+    text-align: center;
+    background: #ffffff;
+}
+
+th{
+    height: 50px;
+    background: rgba(0,0,0,.4);
+    color: #e1e1e1;
+
+}

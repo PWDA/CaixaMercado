@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Niramit', sans-serif;
+    
+}
+
+header{
+    background: #444;
+    padding: 5px 0;
+}
+
+.icon-exit{
+    position: absolute;
+    top: 70px;
+    left: 90%;
+    cursor: pointer;
+}
+
+header span{
+    position: relative;
+    background: #444;
+    top: 10px;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+    color: white
+}
+
+
+body{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#42f4a1), to(#fafafa));
+    background-image: linear-gradient(to bottom, #42f4a1, #fafafa);
+}
+
+.top-header{
+   background: #ffffff;
+}
+
+.img-logo{
+    padding: 10px 0
+}
+
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+h1{
+    color: #333;
+    padding: 60px 0 20px 0;
+    text-align: center;
+}
+
+form{
+    width: 90%;
+    margin: 0 auto;
+}
+
+input[name=btn-buscar]{
+    background: #eee;
+}
+input{
+    background: #fafafa;
+    height: 30px;
+    width: 50%;
+    border: 0;
+    outline: none;
+    padding: 10px;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+    
+}
+
+input[type=submit]{
+    height: 30px;
+    width: 100px;
+    border: 0;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    border: none!important;
+}
+
+table{
+ border-collapse: collapse;
+ width: 100%;
+    text-align: center;
+}
+
+.box-consultar-funcionario{
+    height: 50vh;
+    background: white;
+    overflow: auto;
+}
+
+th{
+    height: 50px;
+    background: rgba(0,0,0,.4);
+    color: #e1e1e1;
+}
+
+td{
+    height: 70px;
+    text-align: center;
+    text-align: center;
+    background: #ffffff;
+  
+}
+
+.btn-alterar, .btn-delete, .btn-incluir{
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+}
+
+.btn-delete{
+    color: tomato;
+    cursor: pointer;
+}
+
+.btn-alterar{
+    color: #4286f4;
+    cursor: pointer;
+}
+
+.btn-criarLogin{
+    color: #2fe289;
+    cursor: pointer;
+}
+
+.btn-novoCadastro{
+    padding: 5px 0;
+    background-image:-webkit-gradient(linear, left bottom, left top, from(#67C18D), to(#82d6a5));
+    background-image:linear-gradient(to top, #67C18D, #82d6a5);
+    color: white;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    width: 150px;
+    text-align: center;
+    margin: 40px 0;
+    
+}
+
+.wrap{
+    width: 90%;
+    margin: 0 auto;
+}
+
+footer{
+    position: relative;
+    bottom: 0;
+    background: #67C18D;
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+
+}

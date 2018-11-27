@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    
+}
+
+body{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#42f4a1), to(#fafafa));
+    background-image: linear-gradient(to bottom, #42f4a1, #fafafa);
+}
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+header{
+    background: #444;
+    padding: 5px 0;
+}
+
+.icon-exit{
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    cursor: pointer;
+}
+
+header span{
+    position: relative;
+    background: #444;
+    top: 10px;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+    color: white
+}
+
+.titulo-cad-func{
+    text-align: center;
+    padding: 20px;
+    margin: 60px auto 20px auto;
+    color: #ffffff;
+    background: #333;
+    width: 450px;
+    border-radius: 5px;
+}
+
+.cadastro{
+    width: 600px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+form{
+   width: 50%;
+   text-align: center;
+   margin: 0 auto;
+}
+
+input[type=date]{
+    color: rgba(0,0,0,0.5);
+}
+
+input{
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    outline: none;
+    background: white;
+    border:0;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+    -webkit-box-shadow: 1px 10px 1px rgba(0,0,0,.2);
+    box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+    
+}
+
+select{
+    width: 100%;
+    height: 30px;
+    border: 0;
+    margin-bottom: 10px;
+    outline: none;
+    background: white;
+    border: 1px solid rgba(0,0,0,.2);
+    color: rgba(0,0,0,0.5);
+    border-radius: 5px;
+     -webkit-box-shadow: 1px 10px 1px rgba(0,0,0,.2);
+    box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+    padding: 7px;
+}
+
+
+
+input[type=image]{
+    margin: 20px;
+}
+
+label{
+    display: block;
+    height: 30px;
+    margin-bottom: 10px;
+
+}
+
+.block-login{
+    background: rgba(0,0,0,.1);
+    padding: 20px;
+    margin-bottom: 5px;
+}
+
+.block-login h2{
+    color: #555;
+    padding: 10px;
+}
+
+.block-pessoais h2{
+    color: #555;
+    padding: 10px;
+}
+
+
+input::-webkit-input-placeholder,
+select::-webkit-input-placeholder{
+    color: rgba(0,0,0,0.5);
+}
+
+input:-ms-input-placeholder
+{
+    color: rgba(0,0,0,0.5);
+}
+
+input::-webkit-input-placeholder{
+    color: rgba(0,0,0,0.5);
+}
+
+input:-ms-input-placeholder{
+    color: rgba(0,0,0,0.5);
+}
+
+input::placeholder{
+    color: rgba(0,0,0,0.5);
+}
+
+input[type=submit]{
+    margin: 10px 0;
+    padding: 0;
+    background-image:-webkit-gradient(linear, left bottom, left top, from(#00BEF4), to(#2988d1));
+    background-image:linear-gradient(to top, #00BEF4, #2988d1);
+    color: white;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    width: 100px;
+}
+
+input[type=image]{
+    width: 200px!important;
+    border-radius: 50%;
+    height: 200px!important;
+    background: rgba(0,0,0,0.0);
+    border: none;
+}
+
+input[type=image]{
+    width: 100px;
+    height: 100px;
+}
+
+footer{
+    position: relative;    
+    bottom: 0;
+    background: #67C18D;
+    text-align: center;
+    color: white;
+
+}
