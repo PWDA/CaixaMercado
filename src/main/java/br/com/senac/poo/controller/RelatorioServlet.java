@@ -28,9 +28,6 @@ public class RelatorioServlet extends HttpServlet {
             if (pagina.endsWith("Relatorio")) {
                 relatorioDia(request, response);
             }
-//            else if (pagina.endsWith("Relatorio-Mes")) {
-//                relatorioMes(request, response);
-//            }
         } catch (Exception ex) {
             throw new ServletException(ex.getMessage());
         }
@@ -46,9 +43,6 @@ public class RelatorioServlet extends HttpServlet {
             if (pagina.endsWith("Relatorio")) {
                 relatorioDia(request, response);
             }
-//            else if (pagina.endsWith("Relatorio-Mes")) {
-//                relatorioMes(request, response);
-//            }
         } catch (Exception ex) {
             throw new ServletException(ex.getMessage());
         }
@@ -79,21 +73,4 @@ public class RelatorioServlet extends HttpServlet {
         request.setAttribute("relatorio", rel);
         rd.forward(request, response);
     }
-
-// REMOVIDO POR FALTA DE TEMPO
-//    protected void relatorioMes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, Exception {
-//        String busca = request.getParameter("buscar");
-//        String situacao = request.getParameter("situacao");
-//
-//        if (busca == null && situacao == null) {
-//            busca = "";
-//            situacao = "Ativos";
-//        }
-//        List<Relatorio> rel = DaoRelatorio.relatorioMensal(busca, situacao);
-//
-//        RequestDispatcher rd = request.getRequestDispatcher("/jsp/relatorio-mensal.jsp");
-//        request.setAttribute("buscar", busca);
-//        request.setAttribute("relatorio", rel);
-//        rd.forward(request, response);
-//    }
 }

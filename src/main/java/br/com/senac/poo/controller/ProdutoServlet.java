@@ -17,7 +17,8 @@ public class ProdutoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String pagina = request.getRequestURI();
-
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
         try {
             if (pagina.endsWith("ProdConsultar")) {
                 RequestDispatcher rd
@@ -36,6 +37,8 @@ public class ProdutoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String pagina = request.getRequestURI();
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
 
         try {
             if (pagina.endsWith("ProdConsultar")) {

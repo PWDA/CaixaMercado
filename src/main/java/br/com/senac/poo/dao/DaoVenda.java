@@ -25,10 +25,13 @@ public class DaoVenda {
         try {
             if(connection != null){
                 
-                pst.setInt(1, idVenda);
-                pst.setInt(2, itemVenda.getCodigoProd());                               
+                for (int i = 0; i < itemVenda.getQtd(); i++) {
+                    
+                    pst.setInt(1, idVenda);
+                    pst.setInt(2, itemVenda.getCodigoProd());                               
 
-                pst.execute();
+                    pst.execute();
+                }                                
             }
 
         } finally {

@@ -50,17 +50,17 @@ public class DaoRelatorio {
                 "SELECT\n"
                 + "MAX(LOG.LOGIN) AS CAIXA, \n"
                 + "VEN.PK_ID AS COD_VENDA,\n"
-                + "MAX(PROD.PRODUTO) AS PRODUTO,\n"
-                + "COUNT(ITE.FK_PRODUTO) AS QUANTIDADE,\n"
+                + "PROD.PRODUTO AS PRODUTO,\n"
+                + "COUNT(ITE.PK_ID) AS QUANTIDADE,\n"
                 + "MAX(PROD.VL_UNITARIO) AS VL_UNITARIO,\n"
-                + "COUNT(ITE.FK_PRODUTO)*PROD.VL_UNITARIO AS VL_TOTAL,\n"
+                + "COUNT(ITE.PK_ID)*PROD.VL_UNITARIO AS VL_TOTAL,\n"
                 + "MAX(VEN.DH_INCLUSAO) AS DT_COMPRA\n"
                 + "FROM TB_ITEMVENDA AS ITE\n"
                 + "LEFT JOIN TB_VENDA AS VEN ON VEN.PK_ID 	= ITE.FK_VENDA\n"
                 + "LEFT JOIN TB_PRODUTO AS PROD ON PROD.PK_ID 	= ITE.FK_PRODUTO\n"
                 + "LEFT JOIN TS_LOGIN AS LOG ON LOG.PK_ID 	= VEN.FK_CAIXA\n"
                 + "WHERE  " + condicao
-                + "GROUP BY VEN.PK_ID\n"
+                + "GROUP BY VEN.PK_ID,PROD.PRODUTO\n"
                 + "ORDER BY VEN.PK_ID;");
 
         while (resultado.next()) {

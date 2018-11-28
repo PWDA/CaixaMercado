@@ -26,6 +26,8 @@ public class VendaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
         
         String pagina = request.getRequestURI();  
         
@@ -50,7 +52,9 @@ public class VendaServlet extends HttpServlet {
    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {   
+            throws ServletException, IOException {  
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
         
         String pagina = request.getRequestURI();        
         
