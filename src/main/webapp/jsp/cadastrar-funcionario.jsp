@@ -24,8 +24,8 @@
             </div><!--container-->
         </header>
         <div class="icon-exit">
-            <a href="${pageContext.request.contextPath}/##"><img src="./img/icon-exit.png" alt="" width="50px"></a>
-            <a href="${pageContext.request.contextPath}/##"><img src="../img/icon-exit.png" alt="" width="50px"></a>
+            <a href="${pageContext.request.contextPath}/FuncConsultar"><img src="./img/icon-exit.png" alt="" width="50px"></a>
+            <a href="${pageContext.request.contextPath}/FuncConsultar"><img src="../img/icon-exit.png" alt="" width="50px"></a>
         </div><!--icon-exit-->
         <section class="cadastro">
             <div class="container">

@@ -3,9 +3,11 @@ package br.com.senac.poo.controller;
 import br.com.senac.poo.dao.DaoVenda;
 import br.com.senac.poo.model.Dinheiro;
 import br.com.senac.poo.model.ItemVenda;
+import br.com.senac.poo.model.Login;
 import br.com.senac.poo.model.Produto;
 import br.com.senac.poo.model.Venda;
 import br.com.senac.poo.servico.ServicoVenda;
+import br.com.senac.poo.validador.Comuns;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -16,6 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "VendaServlet", urlPatterns = {"/Caixa", "/CarregarProd", "/IncluirProd", "/DeleteVenda", "/RealizarVenda", "/Pagar"})
 public class VendaServlet extends HttpServlet {
@@ -36,18 +39,24 @@ public class VendaServlet extends HttpServlet {
                 deleteProdCarrinho(request, response);
             }
             
-            if (pagina.endsWith("Pagar")) {            
-                formaPagamento(request, response);
+//            if (pagina.endsWith("Pagar")) {            
+//                formaPagamento(request, response);
+//            }
+            
+            if (pagina.endsWith("Caixa")) { 
+                if(!listaProd.isEmpty()){
+                    listaProd.clear();
+                }    
+                
+                RequestDispatcher rd                        
+                    = request.getRequestDispatcher("/jsp/venda.jsp");
+                rd.forward(request, response);                 
             }
             
         } catch (Exception ex) {
                 throw new ServletException(ex.getMessage());
             }       
-
-            
-        RequestDispatcher rd
-            = request.getRequestDispatcher("/jsp/venda.jsp");
-        rd.forward(request, response);        
+                           
     }
    
     @Override
@@ -65,9 +74,9 @@ public class VendaServlet extends HttpServlet {
             if (pagina.endsWith("IncluirProd")) {
                 produtoCarrinho(request, response);
             }
-            if (pagina.endsWith("Pagar")) {            
-                formaPagamento(request, response);
-            }
+//            if (pagina.endsWith("Pagar")) {            
+//                formaPagamento(request, response);
+//            }
             if (pagina.endsWith("RealizarVenda")) {            
                 finalizarVenda(request, response);
             }
@@ -84,16 +93,26 @@ public class VendaServlet extends HttpServlet {
 
         Produto prod = DaoVenda.selectProd(busca);       
         
-        //faz calculo do subtotal
+        //faz calculo1 do subtotal
         float subtotal = 0;
-        for (int i = 0; i < listaProd.size(); i++) {
+        if(!listaProd.isEmpty()){
             
-            subtotal += listaProd.get(i).getValorTotal();
+            for (int i = 0; i < listaProd.size(); i++) {
+
+                subtotal += listaProd.get(i).getValorTotal();
+            }
         }
+        
+        Login usuario = Comuns.getUsuarioLogado();
+        HttpSession sessao = request.getSession();
+        sessao.setAttribute("usuario", usuario.getId());
+        sessao.setAttribute("usuario", usuario);
         
         RequestDispatcher rd = request.getRequestDispatcher("/jsp/venda.jsp"); 
         request.setAttribute("subtotal", subtotal); 
-        request.setAttribute("listaProduto", listaProd);        
+        if(!listaProd.isEmpty()){
+            request.setAttribute("listaProduto", listaProd);      
+        }          
         request.setAttribute("produto", prod);       
         rd.forward(request, response);
     }
@@ -107,7 +126,7 @@ public class VendaServlet extends HttpServlet {
         produto.setNomeProduto(request.getParameter("nomeProduto"));        
         int qtd = Integer.parseInt(request.getParameter("quantidade"));
         produto.setQuantidadeProduto(qtd);                          
-        float valorUnitario = Float.parseFloat(request.getParameter("valor-unitario").replace(',', '.'));
+        double valorUnitario = Double.parseDouble(request.getParameter("valor-unitario").replace(',', '.'));
         produto.setValorUnitario(valorUnitario);                
         produto.setValorTotal(valorUnitario * qtd); 
                         
@@ -115,14 +134,24 @@ public class VendaServlet extends HttpServlet {
         
         //faz calculo do subtotal
         float subtotal = 0;
-        for (int i = 0; i < listaProd.size(); i++) {
+        if(!listaProd.isEmpty()){
             
-            subtotal += listaProd.get(i).getValorTotal();
+            for (int i = 0; i < listaProd.size(); i++) {
+
+                subtotal += listaProd.get(i).getValorTotal();
+            }
         }
+        
+        Login usuario = Comuns.getUsuarioLogado();
+        HttpSession sessao = request.getSession();
+        sessao.setAttribute("usuario", usuario.getId());
+        sessao.setAttribute("usuario", usuario);
                                                                        
         RequestDispatcher rd = request.getRequestDispatcher("/jsp/venda.jsp");
         request.setAttribute("subtotal", subtotal); 
-        request.setAttribute("listaProduto", listaProd);       
+        if(!listaProd.isEmpty()){
+            request.setAttribute("listaProduto", listaProd);      
+        }     
         rd.forward(request, response);            
     }
     
@@ -144,49 +173,60 @@ public class VendaServlet extends HttpServlet {
         }   
         
         //faz calculo do subtotal
-        float subtotal = 0;
-        for (int i = 0; i < listaProd.size(); i++) {
+        float subtotal = 0;      
+        if(!listaProd.isEmpty()){
             
-            subtotal += listaProd.get(i).getValorTotal();
-        }
+            for (int i = 0; i < listaProd.size(); i++) {
 
+                subtotal += listaProd.get(i).getValorTotal();
+            }
+        }
+        
+        Login usuario = Comuns.getUsuarioLogado();
+        HttpSession sessao = request.getSession();
+        sessao.setAttribute("usuario", usuario.getId());
+        sessao.setAttribute("usuario", usuario);
+        
         RequestDispatcher rd = request.getRequestDispatcher("/jsp/venda.jsp");  
         request.setAttribute("subtotal", subtotal); 
-        request.setAttribute("listaProduto", listaProd);       
+        if(!listaProd.isEmpty()){
+            request.setAttribute("listaProduto", listaProd);      
+        } 
         rd.forward(request, response);            
     }
     
-    protected void formaPagamento(HttpServletRequest request, HttpServletResponse response) 
-            throws ServletException, IOException, Exception {
-        response.setContentType("text/html;charset=UTF-8");
-        
-        String formaPagamento = request.getParameter("formaPagamento");
-                        
-//        if(formaPagamento.equalsIgnoreCase("dinheiro")){
-            double valorTotal = Double.parseDouble(request.getParameter("sub-total"));
-            double valorRecebido = Double.parseDouble(request.getParameter("valor-recebido"));
-            Dinheiro calcTroco = new Dinheiro(valorTotal, valorRecebido);
-            double troco = calcTroco.carcularTroco(valorRecebido, valorTotal);
-            
-            PrintWriter out = response.getWriter();
-            out.println("<input type='text' class='troco' name='troco' id='troco' value='"+troco+"'>"
-            
-            );
-            
-            //RequestDispatcher rd = request.getRequestDispatcher("/jsp/venda.jsp");            
-            //request.setAttribute("troco", troco);
-            
-//            request.setAttribute("formaPagamento", formaPagamento);
-        //}
-           
-    }
+//    protected void formaPagamento(HttpServletRequest request, HttpServletResponse response) 
+//            throws ServletException, IOException, Exception {
+//        response.setContentType("text/html;charset=UTF-8");
+//        
+//        String formaPagamento = request.getParameter("formaPagamento");
+//                        
+////        if(formaPagamento.equalsIgnoreCase("dinheiro")){
+//            double valorTotal = Double.parseDouble(request.getParameter("sub-total"));
+//            double valorRecebido = Double.parseDouble(request.getParameter("valor-recebido"));
+//            Dinheiro calcTroco = new Dinheiro(valorTotal, valorRecebido);
+//            double troco = calcTroco.carcularTroco(valorRecebido, valorTotal);
+//            
+//            PrintWriter out = response.getWriter();
+//            out.println("<input type='text' class='troco' name='troco' id='troco' value='"+troco+"'>"
+//            
+//            );
+//            
+//            //RequestDispatcher rd = request.getRequestDispatcher("/jsp/venda.jsp");            
+//            //request.setAttribute("troco", troco);
+//            
+////            request.setAttribute("formaPagamento", formaPagamento);
+//        //}
+//           
+//    }
     
     
     
     protected void finalizarVenda(HttpServletRequest request, HttpServletResponse response) 
                 throws ServletException, IOException, Exception {
             
-            String formaPagamento = request.getParameter("formaPagamento");                       
+            String formaPagamento = request.getParameter("formaPagamento");
+            int idCaixa = Integer.parseInt(request.getParameter("idCaixa"));            
                                 
             venda = new Venda();
             String retorno = null;                
@@ -203,7 +243,8 @@ public class VendaServlet extends HttpServlet {
             } 
             venda.setItens(listaItemVenda);
             //venda.setIdCaixa();
-            venda.setFormaPagamento(formaPagamento);                
+            venda.setFormaPagamento(formaPagamento);
+            venda.setIdCaixa(idCaixa);
             venda.setValorTotal(valorTotal);
 
 
@@ -213,11 +254,11 @@ public class VendaServlet extends HttpServlet {
 
             retorno = ServicoVenda.cadastrarVenda(venda);
 
-            if (retorno == null) {
+            if (retorno == null) {                                
                 RequestDispatcher rd
                             = request.getRequestDispatcher("./jsp/home.jsp");
                 rd.forward(request, response);
-                listaProd = null;
+                listaProd.clear();
             } else {
 
 

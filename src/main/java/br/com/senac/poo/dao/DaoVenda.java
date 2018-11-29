@@ -86,7 +86,7 @@ public class DaoVenda {
             
             if(connection != null){
                 
-                pst.setInt(1, 1);
+                pst.setInt(1, venda.getIdCaixa());
                  
                 pst.setDouble(3, venda.getValorTotal());
                 pst.setInt(4, venda.getQuantidade());
@@ -149,7 +149,7 @@ public class DaoVenda {
         }             
         
         ResultSet resultado = pst.executeQuery(
-            "SELECT PK_ID, PRODUTO, QUANTIDADE, VL_UNITARIO "
+            "SELECT PK_ID, PRODUTO, QUANTIDADE, IMAGEM, VL_UNITARIO "
                 + "FROM TB_PRODUTO WHERE PK_ID = "+filtro+" AND TG_INATIVO = 0;");
 
         while (resultado.next()) {
@@ -157,8 +157,9 @@ public class DaoVenda {
             Produto prod = new Produto();
             prod.setCod(resultado.getInt("PK_ID"));
             prod.setNomeProduto(resultado.getString("PRODUTO"));            
-            prod.setQuantidadeProduto(resultado.getInt("QUANTIDADE"));            
-            prod.setValorUnitario(resultado.getFloat("VL_UNITARIO"));            
+            prod.setQuantidadeProduto(resultado.getInt("QUANTIDADE"));
+            prod.setImagem(resultado.getString("IMAGEM"));
+            prod.setValorUnitario(resultado.getDouble("VL_UNITARIO"));            
 
             listarProd = prod;
         }

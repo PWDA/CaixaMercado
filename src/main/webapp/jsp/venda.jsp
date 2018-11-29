@@ -29,16 +29,24 @@
                 <form method="post">
                     <input type="hidden" name="id" value="${produto.getCod()}">
                     <label for="codigo-produto">Cod Produto</label>
-                    <input style="width: 150px" type="text" name="codigo-produto" value="${buscar}">
+                    <input style="width: 150px" type="number" name="codigo-produto" value="${buscar}">
                     <input type="submit" name="btnCarregar" value="Carregar" formaction="CarregarProd">
                     <input type="submit" name="btnInserir" value="Inserir" formaction="IncluirProd"><br>
-                    <input style="width: 320px; font-size: 20px; text-align: center;" type="text" name="nomeProduto" placeholder="Produto..." value="${produto.getNomeProduto()}">
-                    <input style="width: 200px; height: 200px; position: absolute; top: 30px; right: 15%; background: rgba(0,0,0,.1);" type="image" id="image-produto" alt="Imagem do produto"
-                           src="img/beer.png">
+                    
+                    <input style="width: 320px; font-size: 20px; text-align: center;" type="text" name="nomeProduto" placeholder="Produto..." value="${produto.getNomeProduto()}" readonly="true">
+                    <c:if test="${produto.getImagem() != null}">
+                        <input style="width: 200px; height: 200px; position: absolute; top: 30px; right: 15%; background: rgba(0,0,0,.1);" type="image" id="image-produto" alt="Imagem do produto"
+                           src="img/produtos/${produto.getImagem()}">
+                    </c:if>
+                    <c:if test="${produto.getImagem() == null}">
+                        <input style="width: 200px; height: 200px; position: absolute; top: 30px; right: 15%; background: rgba(0,0,0,.1);" type="image" id="image-produto" alt="Imagem do produto"
+                           src="img/produtos/sem-imagem.png"> 
+                    </c:if>
+                    
                     <label for="valor-unitário">Valor unitário</label>
-                    <input style="width: 100px" type="text" name="valor-unitario" value="${produto.getValorUnitario()}" >
+                    <input style="width: 100px" type="text" name="valor-unitario" value="${produto.getValorUnitario()}" readonly="true">
                     <label for="quantidade" >Quantidade</label>
-                    <input style="width: 100px" type="text" name="quantidade">
+                    <input style="width: 100px" type="number" name="quantidade"  >
                 </form>
                 <div class="icon-exit">
                     <a href="./jsp/home.jsp"> <img src="./img/icon-exit.png" alt="" width="50px"> </a>
@@ -50,7 +58,8 @@
             <div class="container">
                 <div class="table-product">
                     <table cellpadding = "0" cellspacing = "0" border="0">
-                        <tr>               
+                        <tr>
+                            <th>Cód Produto</th>
                             <th>Produto</th>
                             <th>Valor unitário</th>
                             <th>Quantidade</th>
@@ -79,13 +88,13 @@
 
 
                 <div class="formulario-input">  
-                    <form action="${pageContext.request.contextPath}/RealizarVenda" method="post">
+                    <form action="${pageContext.request.contextPath}/RealizarVenda" method="post">                        
                         <label for="sub-total">Sub total</label><br>
-                        <input type="text" name="sub-total" id="sub-total" value="${subtotal}"><br>
+                        <input type="text" name="sub-total" id="sub-total" value="${subtotal}" readonly="true"><br>
 
                         <label for="valor-recebido">Valor recebido</label><br>
                         <input type="text" name="valor-recebido" id="valor-recebido"><br>
-
+                        <input type="hidden" name="idCaixa" value="${usuario.getId()}">
                         <label for="forma-pagamento">Forma de pagamento</label>
                         <select name="formaPagamento" id="forma-pagamento">
                             <option value="dinheiro">Dinheiro</option>
@@ -97,7 +106,7 @@
                             <div class="modal">
                                 <a class="fechar"> <p class="fechar-in"> x </p> </a>
                                 <h3 class="subtitulo">Confirmação de Venda</h3>
-                                <form>
+                                <form>                                    
                                     <label for="troco">Troco</label> <br>
                                     <input type="text" class="troco" name="troco" id="troco"><br>                
                                     <c:if test="${formaPagamento == 'Dinheiro'}">

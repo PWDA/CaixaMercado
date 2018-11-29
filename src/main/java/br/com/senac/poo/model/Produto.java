@@ -6,7 +6,8 @@ public class Produto {
     private String nomeProduto;
     private double valorUnitario;
     private int quantidadeProduto;
-    private float valorTotal; // usado para mostrar no form de venda
+    private double valorTotal; // usado para mostrar no form de venda
+    private String imagem;
     
     public String getNomeProduto() {
         return nomeProduto;
@@ -40,12 +41,20 @@ public class Produto {
         this.quantidadeProduto = quantidadeProduto;
     }
 
-    public float getValorTotal() {
+    public double getValorTotal() {
         return valorTotal;
     }
 
-    public void setValorTotal(float valorTotal) {
+    public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
+    }
+
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
 
 }
