@@ -23,7 +23,7 @@
                 <span>PAGAMENTO</span>
             </div><!--container-->
         </header>
-
+        
         <section class="forma-pagamento">
             <div class="container">
                 <form method="post">
@@ -34,6 +34,7 @@
                     <input type="submit" name="btnInserir" value="Inserir" formaction="IncluirProd"><br>
                     
                     <input style="width: 320px; font-size: 20px; text-align: center;" type="text" name="nomeProduto" placeholder="Produto..." value="${produto.getNomeProduto()}" readonly="true">
+                    
                     <c:if test="${produto.getImagem() != null}">
                         <input style="width: 200px; height: 200px; position: absolute; top: 30px; right: 15%; background: rgba(0,0,0,.1);" type="image" id="image-produto" alt="Imagem do produto"
                            src="img/produtos/${produto.getImagem()}">
