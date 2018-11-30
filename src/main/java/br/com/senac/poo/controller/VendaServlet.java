@@ -254,14 +254,17 @@ public class VendaServlet extends HttpServlet {
 
             retorno = ServicoVenda.cadastrarVenda(venda);
 
-            if (retorno == null) {                                
+            if (retorno == null) { 
+                listaProd.clear();
                 RequestDispatcher rd
                             = request.getRequestDispatcher("./jsp/home.jsp");
-                rd.forward(request, response);
-                listaProd.clear();
+                response.sendRedirect("./jsp/home.jsp");               
+                
             } else {
 
-
+                RequestDispatcher rd
+                            = request.getRequestDispatcher("/jsp/venda.jsp");
+                rd.forward(request, response);
             }                                  
     }
 

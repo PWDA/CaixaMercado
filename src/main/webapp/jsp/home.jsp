@@ -14,15 +14,47 @@
         <link href="https://fonts.googleapis.com/css?family=Niramit:300,400,700" rel="stylesheet">
 
         <script>
-            function relogio(){
+            function dataHora(){
                 var data = new Date();                
                 var horas = data.getHours();
                 var minutos = data.getMinutes();
                 var segundos = data.getSeconds();
+                
+                var modificacao = new Date(document.lastModified);
+                var dia = modificacao.getDate();
+                var mes = modificacao.getMonth()+1;
+                var ano = modificacao.getFullYear();                
+                
+                    str_segundo = new String (segundos);
+                    if(str_segundo.length == 1){
+                        segundos = "0" + segundos;
+                    }
+
+                    str_minuto = new String(minutos);
+                    if(str_minuto.length == 1){
+                        minutos = "0" + minutos;
+                    }
+
+                    str_hora = new String(horas);
+                    if(str_hora.length == 1){
+                        horas = "0" + horas;
+                    }
+                    
+                    str_dia = new String(dia);
+                    if(str_dia.length == 1){
+                        dia = "0" + dia;
+                    }
+                    
+                    str_mes = new String(mes);
+                    if(str_mes.length == 1){
+                        mes = "0" + mes;
+                    }
+                    
+                var date = dia + "/" + mes + "/" + ano;
                 var exibe = document.querySelector('.data-caixa');                
-                exibe.innerHTML = horas + ":" + minutos + ":" + segundos;
+                exibe.innerHTML = date + "<br>Hora: " + horas + ":" + minutos + ":" + segundos;
             }
-            setInterval(relogio, 1000);            
+            setInterval(dataHora, 1000);            
         </script>
         
         
