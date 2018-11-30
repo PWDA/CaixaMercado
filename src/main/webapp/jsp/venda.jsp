@@ -27,11 +27,13 @@
         <section class="forma-pagamento">
             <div class="container">
                 <form method="post">
-                    <input type="hidden" name="id" value="${produto.getCod()}">
+                    <input type="hidden" name="id" value="${produto.getCod()}">                                                                                
                     <label for="codigo-produto">Cod Produto</label>
                     <input style="width: 150px" type="number" name="codigo-produto" value="${buscar}">
                     <input type="submit" name="btnCarregar" value="Carregar" formaction="CarregarProd">
-                    <input type="submit" name="btnInserir" value="Inserir" formaction="IncluirProd"><br>
+                    <input type="submit" name="btnInserir" value="Inserir" formaction="IncluirProd">
+                    
+                    <c:out value="${msgErro}"/> <br>
                     
                     <input style="width: 320px; font-size: 20px; text-align: center;" type="text" name="nomeProduto" placeholder="Produto..." value="${produto.getNomeProduto()}" readonly="true">
                     

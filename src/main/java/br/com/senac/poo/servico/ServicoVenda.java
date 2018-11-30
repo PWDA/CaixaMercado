@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class ServicoVenda {
     
-    public static String cadastrarVenda(Venda venda) {
+    public static String cadastrarVenda(Venda venda) throws Exception {
         String resposta = null;
        
         resposta = ValidadorVenda.validar(venda);
@@ -18,8 +18,7 @@ public class ServicoVenda {
             try {
               DaoVenda.inserir(venda);
 
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (Exception e) {                
                 resposta = "Erro na fonte de dados";
             }
 
