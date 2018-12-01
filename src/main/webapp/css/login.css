@@ -87,19 +87,7 @@ ul li a{
     padding: 5px 10px;
 }
 
-ul li a:hover{
-    background-image: -webkit-gradient(linear, left top, right bottom, from(#00BDF4),color-stop(#67C18D), to(#67C18D));
-    background-image: linear-gradient(to bottom right, #00BDF4,#67C18D, #67C18D);
-    -webkit-box-shadow: 2px 5px 10px rgba(0,0,0,.2);
-    box-shadow: 2px 5px 10px rgba(0,0,0,.2);
-}
 
-.btn-login:hover{
-    background-image: -webkit-gradient(linear, left top, right bottom, from(#00BDF4),color-stop(#0066B0), to(#0066B0));
-    background-image: linear-gradient(to bottom right, #00BDF4,#0066B0, #0066B0);
-    -webkit-box-shadow: 2px 5px 10px rgba(0,0,0,.2);
-    box-shadow: 2px 5px 10px rgba(0,0,0,.2);
-}
 
 .sub-menu a{
     border-radius: 0;
@@ -144,12 +132,7 @@ input{
     cursor: pointer;
 }
 
-.btn-login:hover{
-    background-image: -webkit-gradient(linear, left top, right bottom, from(#00BDF4),color-stop(#0066B0), to(#0066B0));
-    background-image: linear-gradient(to bottom right, #00BDF4,#0066B0, #0066B0);
-    -webkit-box-shadow: 2px 5px 10px rgba(0,0,0,.2);
-    box-shadow: 2px 5px 10px rgba(0,0,0,.2);
-}
+
 
 ::-webkit-input-placeholder{
     color: #888;
