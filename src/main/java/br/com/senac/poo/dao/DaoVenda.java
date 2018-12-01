@@ -44,34 +44,34 @@ public class DaoVenda {
         }
     }
     
-    public static void decrementarEstoque(ItemVenda quantidade) throws SQLException,
-            Exception {
-        
-        Connection connection = ConnectionUtils.getConnection();
-        
-        String sql = "UPDATE TB_PRODUTO SET QUANTIDADE=? WHERE PK_ID=?";
-        
-        PreparedStatement pst = connection.prepareStatement(sql);
-        
-        try {
-            if(connection != null){                
-            
-                
-                pst.setInt(1, quantidade.getProduto().getQuantidadeProduto()- quantidade.getQtd());
-                pst.setInt(2, quantidade.getCodigoProd());
-
-                pst.executeUpdate();
-            }
-
-        } finally {
-            if (pst != null && !pst.isClosed()) {
-                pst.close();
-            }
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        }
-    }
+//    public static void decrementarEstoque(ItemVenda quantidade) throws SQLException,
+//            Exception {
+//        
+//        Connection connection = ConnectionUtils.getConnection();
+//        
+//        String sql = "UPDATE TB_PRODUTO SET QUANTIDADE=? WHERE PK_ID=?";
+//        
+//        PreparedStatement pst = connection.prepareStatement(sql);
+//        
+//        try {
+//            if(connection != null){                
+//            
+//                
+//                pst.setInt(1, quantidade.getProduto().getQuantidadeProduto()- quantidade.getQtd());
+//                pst.setInt(2, quantidade.getCodigoProd());
+//
+//                pst.executeUpdate();
+//            }
+//
+//        } finally {
+//            if (pst != null && !pst.isClosed()) {
+//                pst.close();
+//            }
+//            if (connection != null && !connection.isClosed()) {
+//                connection.close();
+//            }
+//        }
+//    }
     
     public static void inserir(Venda venda) throws SQLException, Exception {
         

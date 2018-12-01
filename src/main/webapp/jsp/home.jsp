@@ -56,9 +56,7 @@
             }
             setInterval(dataHora, 1000);            
         </script>
-        
-        
-        
+                        
     </head>
     <body>        
         <div class="aside-info">

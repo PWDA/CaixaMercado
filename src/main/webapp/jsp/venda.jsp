@@ -29,7 +29,7 @@
                 <form method="post">
                     <input type="hidden" name="id" value="${produto.getCod()}">                                                                                
                     <label for="codigo-produto">Cod Produto</label>
-                    <input style="width: 150px" type="number" name="codigo-produto" value="${buscar}">
+                    <input style="width: 150px" type="number" name="codigo-produto" value="${buscar}" min="1">
                     <input type="submit" name="btnCarregar" value="Carregar" formaction="CarregarProd">
                     <input type="submit" name="btnInserir" value="Inserir" formaction="IncluirProd">
                     
@@ -49,7 +49,7 @@
                     <label for="valor-unitário">Valor unitário</label>
                     <input style="width: 100px" type="text" name="valor-unitario" value="${produto.getValorUnitario()}" readonly="true">
                     <label for="quantidade" >Quantidade</label>
-                    <input style="width: 100px" type="number" name="quantidade"  >
+                    <input style="width: 100px" type="number" name="quantidade"  min="1">
                 </form>
                 <div class="icon-exit">
                     <a href="./jsp/home.jsp"> <img src="./img/icon-exit.png" alt="" width="50px"> </a>
@@ -250,8 +250,6 @@
                 document.querySelector('.troco').value = 'R$' + resultado;
             }
         </script>
-
-
 
     </body>
 </html>

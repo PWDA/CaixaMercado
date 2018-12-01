@@ -2,7 +2,6 @@ package br.com.senac.poo.controller;
 
 import br.com.senac.poo.dao.DaoRelatorio;
 import br.com.senac.poo.model.Relatorio;
-import com.sun.javafx.binding.StringFormatter;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

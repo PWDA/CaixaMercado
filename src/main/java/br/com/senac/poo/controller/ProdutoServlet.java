@@ -91,17 +91,9 @@ public class ProdutoServlet extends HttpServlet {
 
     protected void produtoConsultar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, Exception {
         String busca = request.getParameter("buscar");
-        String situacao  = request.getParameter("situacao");
-        
-//        if (busca == null) {
-//            busca = "";
-//        }
+        String situacao  = request.getParameter("situacao");        
 
         List<Produto> prod = ServicoProduto.getList(busca,situacao);        
-
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/consultar.jsp"); 
-//            request.setAttribute("funcionario", func);
-//        dispatcher.forward(request, response);
         
         RequestDispatcher rd = request.getRequestDispatcher("/jsp/consultarProd.jsp");
         request.setAttribute("buscar", busca);
@@ -143,7 +135,6 @@ public class ProdutoServlet extends HttpServlet {
                     = request.getRequestDispatcher("/jsp/consultarProd.jsp");
                 rd.forward(request, response);
             }
-
                         
         } catch (Exception ex) {
             request.setAttribute("erro", ex.getMessage());

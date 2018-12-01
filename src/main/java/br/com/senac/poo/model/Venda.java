@@ -42,11 +42,7 @@ public class Venda {
 
     public void setItens(List<ItemVenda> itens) {
         this.itens = itens;
-    }
-    
-    public void addItem(ItemVenda itemVenda) {
-        itens.add(itemVenda);
-    }
+    }   
 
     public String getFormaPagamento() {
         return formaPagamento;

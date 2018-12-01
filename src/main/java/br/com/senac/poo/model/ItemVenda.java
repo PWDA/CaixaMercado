@@ -6,19 +6,12 @@ public class ItemVenda {
     private Produto produto;         
     private double valorUnitario;
     private int codigoVenda;
-    private int codigoProd;
+    private int codigoProd;  
     private int qtd;
 
     public ItemVenda(){        
-        this.codigoItemVenda = 0;        
-        this.valorUnitario = 0.0;
-        this.codigoVenda = 0;
-        this.codigoProd = 0;
-    }
 
-//    public ItemVenda(Produto produto) {
-//        this.produto = produto;
-//    }
+    }
 
     public int getCodigoItemVenda() {
         return codigoItemVenda;

@@ -1,7 +1,5 @@
 package br.com.senac.poo.model;
 
-import java.util.Date;
-
 public class Relatorio {
 
     private String caixa;
@@ -76,6 +74,5 @@ public class Relatorio {
     public void setTotFaturado(float totFaturado) {
         this.totFaturado = totFaturado;
     }
-
-   
+    
 }

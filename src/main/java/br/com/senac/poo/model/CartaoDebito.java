@@ -1,6 +1,5 @@
 package br.com.senac.poo.model;
 
-import br.com.senac.poo.model.FormaPagamento;
 
 public class CartaoDebito extends FormaPagamento{
     

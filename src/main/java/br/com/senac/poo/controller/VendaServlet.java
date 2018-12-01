@@ -1,7 +1,5 @@
 package br.com.senac.poo.controller;
 
-import br.com.senac.poo.dao.DaoVenda;
-import br.com.senac.poo.model.Dinheiro;
 import br.com.senac.poo.model.ItemVenda;
 import br.com.senac.poo.model.Login;
 import br.com.senac.poo.model.Produto;
@@ -9,7 +7,6 @@ import br.com.senac.poo.model.Venda;
 import br.com.senac.poo.servico.ServicoVenda;
 import br.com.senac.poo.validador.Comuns;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -83,8 +80,8 @@ public class VendaServlet extends HttpServlet {
 
         } catch (Exception ex) {
             throw new ServletException(ex.getMessage());
-        }
-        }
+            }
+    }
     
     protected void produtoCarregar(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, Exception {
@@ -223,11 +220,8 @@ public class VendaServlet extends HttpServlet {
         for(int i = 0; i < listaProd.size(); i++) {            
 
             if(listaProd.get(i).getCod() == id)
-            {                
-                // Remove.
-                listaProd.remove(i);
-
-                // Sai do loop.
+            {                                
+                listaProd.remove(i);                
                 break;
             }
         }   
@@ -279,9 +273,7 @@ public class VendaServlet extends HttpServlet {
 //        //}
 //           
 //    }
-    
-    
-    
+            
     protected void finalizarVenda(HttpServletRequest request, HttpServletResponse response) 
                 throws ServletException, IOException, Exception {
         
@@ -328,21 +320,7 @@ public class VendaServlet extends HttpServlet {
             RequestDispatcher rd
                 = request.getRequestDispatcher("/jsp/venda.jsp");
             rd.forward(request, response);
-        }
-            
-        
-
-
-        
-        
-
-         
-
-                      
-
-         
-            
-            
+        }            
                                          
     }
 
