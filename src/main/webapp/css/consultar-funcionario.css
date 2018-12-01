@@ -4,7 +4,7 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     font-family: 'Niramit', sans-serif;
-    
+
 }
 
 header{
@@ -31,12 +31,11 @@ header span{
 
 
 body{
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#42f4a1), to(#fafafa));
-    background-image: linear-gradient(to bottom, #42f4a1, #fafafa);
+    background: #41f4bb;
 }
 
 .top-header{
-   background: #ffffff;
+    background: #ffffff;
 }
 
 .img-logo{
@@ -75,7 +74,7 @@ input{
     color: #333;
     font-size: 18px;
     margin-bottom: 20px;
-    
+
 }
 
 input[type=submit]{
@@ -89,8 +88,8 @@ input[type=submit]{
 }
 
 table{
- border-collapse: collapse;
- width: 100%;
+    border-collapse: collapse;
+    width: 100%;
     text-align: center;
 }
 
@@ -111,7 +110,7 @@ td{
     text-align: center;
     text-align: center;
     background: #ffffff;
-  
+
 }
 
 .btn-alterar, .btn-delete, .btn-incluir{
@@ -136,8 +135,7 @@ td{
 
 .btn-novoCadastro{
     padding: 5px 0;
-    background-image:-webkit-gradient(linear, left bottom, left top, from(#67C18D), to(#82d6a5));
-    background-image:linear-gradient(to top, #67C18D, #82d6a5);
+    background: #333333;
     color: white;
     cursor: pointer;
     border: 0;
@@ -145,7 +143,8 @@ td{
     width: 150px;
     text-align: center;
     margin: 40px 0;
-    
+    border-radius: 5px;
+
 }
 
 .wrap{

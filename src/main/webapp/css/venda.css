@@ -10,8 +10,7 @@
 }
 
 body{
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#42f4a1), to(#fafafa));
-    background-image: linear-gradient(to bottom, #42f4a1, #fafafa);
+    background: #41f4bb;
 }
 .container{
     max-width: 1200px;
@@ -88,10 +87,10 @@ table{
 input[name=btnFecharCompra]{
     margin: 5vh 2vw 2vh 0;
     width: 150px!important;
-    background: #42b3f4;
+    background: #333333;
     cursor: pointer;
     color: white;
-    
+
 }
 
 .voltar{
