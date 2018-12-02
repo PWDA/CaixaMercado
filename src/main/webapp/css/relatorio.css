@@ -8,8 +8,7 @@
 }
 
 body{
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#42f4a1), to(#fafafa));
-    background-image: linear-gradient(to bottom, #42f4a1, #fafafa);
+    background: #41f4bb;
 }
 
 header{
@@ -147,6 +146,7 @@ input[name=btnGerar]{
     background: #333;
     color: white;
     padding: 10px 15px;
+    border-radius: 5px;
 }
 
 input[name=btnGerar]{
@@ -167,6 +167,10 @@ input[name=btnGerar]{
 table{
     border-collapse: collapse;
 
+}
+
+.faturado{
+    padding: 30px 0;
 }
 
 td{
