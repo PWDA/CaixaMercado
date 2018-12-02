@@ -51,14 +51,14 @@ public class RelatorioServlet extends HttpServlet {
         DateFormat nova = new SimpleDateFormat("yyyy-MM-dd");
         String inicio   = request.getParameter("dt_inicial");
         String fim      = request.getParameter("dt_final");
-        String busca    = request.getParameter("buscar");
+        String busca    = request.getParameter("caixa");
         Date date = new Date();
 
-        if (inicio == null) {
+        if (inicio == null || inicio.equalsIgnoreCase("")) {
             inicio = nova.format(date);
         }
 
-        if (fim == null) {
+        if (fim == null || fim.equalsIgnoreCase("")) {
             fim = nova.format(date);
         }
 

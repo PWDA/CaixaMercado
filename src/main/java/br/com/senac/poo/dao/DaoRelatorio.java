@@ -40,7 +40,7 @@ public class DaoRelatorio {
         if (fim != null || !fim.trim().isEmpty()) {
             condicao = condicao + " AND VEN.DH_INCLUSAO <= CONVERT('" + fim + " 23:59:59'" + ", DATETIME)";
         }
-        if (caixa != null || !caixa.trim().isEmpty()) {
+        if (!caixa.equalsIgnoreCase("") || !caixa.trim().isEmpty()) {
             condicao = condicao + " AND LOG.LOGIN LIKE '%" + caixa + "%'";
         }
 
