@@ -68,8 +68,7 @@ public class DaoLogin {
             if (connection != null && !connection.isClosed()) {
                 connection.close();
             }
-        }
-        
+        }        
         return true;
     }
     
