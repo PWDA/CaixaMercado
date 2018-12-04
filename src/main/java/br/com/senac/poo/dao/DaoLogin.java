@@ -93,8 +93,9 @@ public class DaoLogin {
         
         Statement st = connection.createStatement();
         
-        ResultSet rs = st.executeQuery("SELECT * FROM TS_LOGIN WHERE LOGIN ='"
-                + login.trim() + "' AND SENHA ='" + senha.trim() + "'");
+        ResultSet rs = st.executeQuery("SELECT LOG.* FROM TS_LOGIN AS LOG LEFT JOIN TB_FUNCIONARIO"
+                + " AS FUN ON FUN.PK_ID = LOG.FK_FUNCIONARIO WHERE LOG.LOGIN ='"
+                + login.trim() + "' AND LOG.SENHA ='" + senha.trim() + "' AND FUN.TG_INATIVO = 0;");
                                  
         
         while (rs.next()) {
